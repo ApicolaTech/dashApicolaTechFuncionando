@@ -7,6 +7,8 @@
     <link rel="stylesheet" href="./TelaDash.css">
     <link rel="icon" href="./src/colmeia-de-abelhas.png">
     <title>Apícola Tech - Dashboard</title>
+    <script src="../js/funcoes.js"></script>
+    <script src="./alerta.js"></script>
 </head>
 <body>
     <div id="container">
@@ -156,16 +158,20 @@
                 </div> Gráfico Antigo -->
 
                 <!-- Gráfico novo -->
-               
-                    <div id="grafico1" class="display-block">
-                        <h3 class="tituloGraficos">
-                            <span id="tituloAquario1">123</span> <!-- Aqui pega o id pra mudar o titulo no js -->
-                        </h3>
-                        <div class="graph">
-                            <canvas id="myChartCanvas1"></canvas>
+                    <div id="grafiTexto">
+                    
+                    
+                        <div id="grafico1" class="display-block">
+                            <h3 class="tituloGraficos">
+                                <span id="tituloAquario1">123</span> <!-- Aqui pega o id pra mudar o titulo no js -->
+                            </h3>
+                            <div class="graph">
+                                <canvas id="myChartCanvas1"></canvas>
+                            </div>
                         </div>
+                        <div id="avisoCaptura1"></div>
+                    
                     </div>
-                
             </div>
         </div>
 
@@ -192,6 +198,7 @@
 <!--                 <div class="grafico grafico-linhas">
                     <canvas id="myChart2" ></canvas>
                 </div> -->
+                <div id="grafiTexto">
                 <div id="grafico1" class="display-block">
                     <h3 class="tituloGraficos">
                         <span id="tituloAquario2">123</span> <!-- Aqui pega o id pra mudar o titulo no js -->
@@ -200,7 +207,7 @@
                         <canvas id="myChartCanvas2"></canvas> <!-- aqui pega o id pra geraro grafico -->
                     </div>
                 </div>
-            
+                </div>
 
             </div>
         </div>
@@ -224,7 +231,7 @@ verificar_autenticacao();
 
 function alterarTitulo(idApiario) {
     var tituloAquario = document.getElementById(`tituloAquario${idApiario}`)
-    tituloAquario.innerHTML = "Últimas medidas de tempExterna e tempInterna do <span style='color: #e6005a'>Aquário " + idApiario + "</span>"
+    tituloAquario.innerHTML = "Últimas medidas de tempExterna e tempInterna do <span style='color: #e6005a'>Apiário " + idApiario + "</span>"
 }
 /* 
 function exibirAquario(idApiario) {
