@@ -21,9 +21,20 @@ function buscarUltimasMedidasTeste(idApiario) {
 	round(sum(case when fkSensor=(SELECT idSensor FROM Sensor WHERE fkApiario = ${idApiario} ORDER BY idSensor LIMIT 1) then Temperatura else 0 end),2) as tempI,
     round(sum(case when fkSensor=(SELECT idSensor FROM Sensor WHERE fkApiario = ${idApiario} ORDER BY idSensor DESC LIMIT 1) then Temperatura else 0 end),2) as tempE
     from apicolatech.registroapiario
+    WHERE fkApiario = ${idApiario} 
     group by DataHora,
     fkApiario	
     order by DataHora desc LIMIT 7;`
+
+    //     select 
+    //     DATE_FORMAT(DataHora,'%H:%i:%s')  AS DataHora,
+    // fkApiario,
+	// round(sum(case when fkSensor=(SELECT idSensor FROM Sensor WHERE fkApiario = ${idApiario} ORDER BY idSensor LIMIT 1) then Temperatura else 0 end),2) as tempI,
+    // round(sum(case when fkSensor=(SELECT idSensor FROM Sensor WHERE fkApiario = ${idApiario} ORDER BY idSensor DESC LIMIT 1) then Temperatura else 0 end),2) as tempE
+    // from apicolatech.registroapiario
+    // group by DataHora,
+    // fkApiario	
+    // order by DataHora desc LIMIT 7;
        /* SELECT 
         tempI tempInterna, 
         tempE tempExterna, 
@@ -59,14 +70,15 @@ function buscarMedidasEmTempoReal(idApiario) {
 
     } else if (process.env.AMBIENTE_PROCESSO == "desenvolvimento") {
         instrucaoSql =`select 
-        DATE_FORMAT(DataHora,'%H:%i:%s') AS DataHora,
-        fkApiario,
-        round(sum(case when fkSensor=(SELECT idSensor FROM Sensor WHERE fkApiario = ${idApiario} ORDER BY idSensor LIMIT 1) then Temperatura else 0 end),2) as tempI,
-        round(sum(case when fkSensor=(SELECT idSensor FROM Sensor WHERE fkApiario = ${idApiario} ORDER BY idSensor DESC LIMIT 1) then Temperatura else 0 end),2) as tempE
-        from apicolatech.registroapiario
-        group by DataHora,
-        fkApiario	
-        order by DataHora desc LIMIT 1`;
+        DATE_FORMAT(DataHora,'%H:%i:%s')  AS DataHora,
+    fkApiario,
+	round(sum(case when fkSensor=(SELECT idSensor FROM Sensor WHERE fkApiario = ${idApiario} ORDER BY idSensor LIMIT 1) then Temperatura else 0 end),2) as tempI,
+    round(sum(case when fkSensor=(SELECT idSensor FROM Sensor WHERE fkApiario = ${idApiario} ORDER BY idSensor DESC LIMIT 1) then Temperatura else 0 end),2) as tempE
+    from apicolatech.registroapiario
+    WHERE fkApiario = ${idApiario} 
+    group by DataHora,
+    fkApiario	
+    order by DataHora desc LIMIT 1;`;
     } else {
         console.log("\nO AMBIENTE (produção OU desenvolvimento) NÃO FOI DEFINIDO EM app.js\n");
         return

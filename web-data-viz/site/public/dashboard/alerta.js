@@ -23,51 +23,245 @@ function obterdados(idApiario) {
 }
 
 function alertar(resposta, idApiario) {
-    var temp = resposta[0].temperatura;
+    var tempI = resposta[0].tempI;
+    var tempE = resposta[0].tempE;
+
+    console.log(tempI, '   ffffff  ', tempE, 'aaaaaaaa',idApiario);
 
     console.log(idApiario === resposta[0].fk_aquario)
     
     var grauDeAviso ='';
 
 
-    var limites = {
-        muito_quente: 23,
-        quente: 22,
-        ideal: 20,
-        frio: 10,
-        muito_frio: 5
+    var limitesI = {
+        extremo_quente: 35,
+        muito_quente: 34.3,
+        quente: 33.9,
+        ideal: 33.5,
+        frio: 32.5,
+        muito_frio: 31.5,
+        extremo_frio: 30
     };
 
-    var classe_temperatura = 'cor-alerta';
+    var limitesE = {
+        extremo_quente: 27,
+        muito_quente: 26.6,
+        quente: 26.0,
+        ideal: 25.7,
+        frio: 24.4,
+        muito_frio: 23.8,
+        extremo_frio: 22
+    };
 
-    if (temp >= limites.muito_quente) {
-        classe_temperatura = 'cor-alerta perigo-quente';
-        grauDeAviso = 'perigo quente'
-        grauDeAvisoCor = 'cor-alerta perigo-quente'
-        exibirAlerta(temp, idApiario, grauDeAviso, grauDeAvisoCor)
+    
+
+
+
+    if (tempI >= limitesI.extremo_quente) {
+
+        Swal.fire({
+            position: 'top-end',
+            icon: 'warning',
+            width: '300px',
+            height: '100px',
+            background: '#3F3',
+            color: '#716add',
+            title: `${tempI}`,
+            showConfirmButton: false,
+            timer: 1500
+          })
     }
-    else if (temp < limites.muito_quente && temp >= limites.quente) {
-        classe_temperatura = 'cor-alerta alerta-quente';
-        grauDeAviso = 'alerta quente'
-        grauDeAvisoCor = 'cor-alerta alerta-quente'
-        exibirAlerta(temp, idApiario, grauDeAviso, grauDeAvisoCor)
+    else if (tempI < limitesI.extremo_quente && tempI >= limitesI.muito_quente) {
+        Swal.fire({
+            position: 'top-end',
+            icon: 'warning',
+            width: '300px',
+            height: '100px',
+            title: `${tempI}`,
+            showConfirmButton: false,
+            timer: 1500
+          })
     }
-    else if (temp < limites.quente && temp > limites.frio) {
-        classe_temperatura = 'cor-alerta ideal';
-        removerAlerta(idApiario);
+    else if (tempI < limitesI.muito_quente && tempI > limitesI.quente) {
+        Swal.fire({
+            position: 'top-end',
+            icon: 'warning',
+            width: '300px',
+            height: '100px',
+            background: '#3F3',
+            color: '#716add',
+            title: `${tempI}`,
+            showConfirmButton: false,
+            timer: 1500
+          })
     }
-    else if (temp <= limites.frio && temp > limites.muito_frio) {
-        classe_temperatura = 'cor-alerta alerta-frio';
-        grauDeAviso = 'alerta frio'
-        grauDeAvisoCor = 'cor-alerta alerta-frio'
-        exibirAlerta(temp, idApiario, grauDeAviso, grauDeAvisoCor)
+    else if (tempI <= limitesI.quente && tempI > limitesI.ideal) {
+        Swal.fire({
+            position: 'top-end',
+            icon: 'warning',
+            width: '300px',
+            height: '100px',
+            background: '#3F3',
+            color: '#716add',
+            title: `${tempI}`,
+            showConfirmButton: false,
+            timer: 1500
+          })
     }
-    else if (temp <= limites.muito_frio) {
-        classe_temperatura = 'cor-alerta perigo-frio';
-        grauDeAviso = 'perigo frio'
-        grauDeAvisoCor = 'cor-alerta perigo-frio'
-        exibirAlerta(temp, idApiario, grauDeAviso, grauDeAvisoCor)
+    
+    else if (tempI <= limitesI.ideal && tempI >= limitesI.frio) {
+        Swal.fire({
+            position: 'top-end',
+            icon: 'warning',
+            width: '300px',
+            height: '100px',
+            background: '#3F3',
+            color: '#716add',
+            title: `${tempI}`,
+            showConfirmButton: false,
+            timer: 1500
+          })
+    } else if (tempI <= limitesI.frio && tempI >= limitesI.muito_frio) {
+        Swal.fire({
+            position: 'top-end',
+            icon: 'warning',
+            width: '300px',
+            height: '100px',
+            background: '#3F3',
+            color: '#716add',
+            title: `${tempI}`,
+            showConfirmButton: false,
+            timer: 1500
+          })
+    } else if(tempI <= limitesI.muito_frio && tempI >= limitesI.extremo_frio){
+        Swal.fire({
+            position: 'top-end',
+            icon: 'warning',
+            width: '300px',
+            height: '100px',
+            background: '#3F3',
+            color: '#716add',
+            title: `${tempI}`,
+            showConfirmButton: false,
+            timer: 1500
+          })
+    } else if(tempI <= limitesI.extremo_frio){
+        Swal.fire({
+            position: 'top-end',
+            icon: 'warning',
+            width: '300px',
+            height: '100px',
+            background: '#3F3',
+            color: '#716add',
+            title: `${tempI}`,
+            showConfirmButton: false,
+            timer: 1500
+          })
+    } 
+
+    
+    if (tempI >= limitesE.extremo_quente) {
+
+        Swal.fire({
+            position: 'top-end',
+            icon: 'warning',
+            width: '300px',
+            height: '100px',
+            background: '#3F3',
+            color: '#716add',
+            title: `${tempI}`,
+            showConfirmButton: false,
+            timer: 1500
+          })
     }
+    else if (tempI < limitesE.extremo_quente && tempI >= limitesE.muito_quente) {
+        Swal.fire({
+            position: 'top-end',
+            icon: 'warning',
+            width: '300px',
+            height: '100px',
+            title: `${tempI}`,
+            showConfirmButton: false,
+            timer: 1500
+          })
+    }
+    else if (tempI < limitesE.muito_quente && tempI > limitesE.quente) {
+        Swal.fire({
+            position: 'top-end',
+            icon: 'warning',
+            width: '300px',
+            height: '100px',
+            background: '#3F3',
+            color: '#716add',
+            title: `${tempI}`,
+            showConfirmButton: false,
+            timer: 1500
+          })
+    }
+    else if (tempI <= limitesE.quente && tempI > limitesE.ideal) {
+        Swal.fire({
+            position: 'top-end',
+            icon: 'warning',
+            width: '300px',
+            height: '100px',
+            background: '#3F3',
+            color: '#716add',
+            title: `${tempI}`,
+            showConfirmButton: false,
+            timer: 1500
+          })
+    }
+    
+    else if (tempI <= limitesE.ideal && tempI >= limitesE.frio) {
+        Swal.fire({
+            position: 'top-end',
+            icon: 'warning',
+            width: '300px',
+            height: '100px',
+            background: '#3F3',
+            color: '#716add',
+            title: `${tempI}`,
+            showConfirmButton: false,
+            timer: 1500
+          })
+    } else if (tempI <= limitesE.frio && tempI >= limitesE.muito_frio) {
+        Swal.fire({
+            position: 'top-end',
+            icon: 'warning',
+            width: '300px',
+            height: '100px',
+            background: '#3F3', 
+            color: '#716add',
+            title: `${tempI}`,
+            showConfirmButton: false,
+            timer: 1500
+          })
+    } else if(tempI <= limitesE.muito_frio && tempI >= limitesE.extremo_frio){
+        Swal.fire({
+            position: 'top-end',
+            icon: 'warning',
+            width: '300px',
+            height: '100px',
+            background: '#3F3',
+            color: '#716add',
+            title: `${tempI}`,
+            showConfirmButton: false,
+            timer: 1500
+          })
+    } else if(tempI <= limitesE.extremo_frio){
+
+        Swal.fire({
+            position: 'top-end',
+            icon: 'warning',
+            width: '300px',
+            height: '100px',
+            background: '#3F3',
+            color: '#716add',
+            title: `${tempI}`,
+            showConfirmButton: false,
+            timer: 1500
+          })
+    } 
 
     var card;
 

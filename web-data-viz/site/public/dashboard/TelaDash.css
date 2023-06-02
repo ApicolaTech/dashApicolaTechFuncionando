@@ -259,7 +259,7 @@ input[type='search']:focus{
 table{
     background-color: #111;
     width: 100%;
-     border-spacing: 0;
+     border-spacing: 0.1;
 }
 #tabela-risco{
     width: 80%;
@@ -272,25 +272,31 @@ th{
 th, td{
     padding: .7em;
     text-align: center;
-    border: 1px solid #333;
+    border: 2px solid #333;
 }
 
 .titulo-tabela{
     text-align: center;
 }
 
-.titulo-critico{
-    border-color: red;
+.titulo-critico1{
+    border-color: #05035f;
 }
-.titulo-emergencia{
-    border-color: orange;
+.titulo-critico2{
+    border-color: #ff0e0e;
+}
+.titulo-emergencia1{
+    border-color: rgb(32, 86, 204);
 }
 .titulo-emergencia2{
-    border-color: orange;
+    border-color: rgb(241, 128, 22);
 }
 
-.titulo-alerta{
-    border-color: yellow;
+.titulo-alerta1{
+    border-color: rgb(52, 198, 243);
+}
+.titulo-alerta2{
+    border-color: rgb(252, 237, 27);
 }
 
 .titulo-ideal{
