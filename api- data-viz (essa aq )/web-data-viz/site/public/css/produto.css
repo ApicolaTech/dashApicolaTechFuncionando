@@ -1,0 +1,66 @@
+body {
+    font-family: 'zen kaku gothic new', sans-serif;
+    background-color: black;
+    margin: 0;
+}
+
+.containerProduto {
+    height: 100vw;
+    width: 100%;
+}
+
+
+.tituloProdutos {
+    display: flex;
+    justify-content: center;
+    margin-top: 40px;
+}
+.tituloProdutos h1 {
+    color: white;
+    font-family: 'Roboto Mono', monospace;
+    font-size: 45px;
+}
+
+.informacoes{
+    display: flex;
+    justify-content: space-around;
+}
+
+.imgProduto{
+    display: flex;
+    width: 50vw;
+    height: 250px;
+    margin-left: 20px;
+
+}
+
+.informacoesProduto{
+
+    width: 30%;
+    justify-content: center;
+    margin-right: 100px;
+}
+
+.informacoesProduto h3{
+    color: yellow;
+    font-size: 25px;
+    font-family: 'zen kaku gothic new', sans-serif;
+}
+.informacoesProduto span{
+    color: white;
+}
+.informacoesProduto p{
+    color: white;
+    font-family: 'zen kaku gothic new', sans-serif;
+    font-size: 20px;
+}
+
+.botaoOrcamento button{
+    margin-top: 10px;
+    background-color: rgb(0, 0, 0);
+    border: solid 2px #E0CA3C;
+    color: white;
+    border-radius: 30px;
+    font-size: 15px;
+    padding: 10px;
+}

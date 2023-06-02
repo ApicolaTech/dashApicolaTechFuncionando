@@ -1,0 +1,581 @@
+* {
+    font-family: 'Zen Kaku Gothic New', sans-serif;
+}
+
+/* html{
+    scroll-behavior: smooth;
+} */
+
+
+/* Tela de início */
+
+body {
+    margin: 0;
+    padding: 0;
+    background-color: #020200;
+    display: flex;
+    flex-direction: column;
+}
+
+.header {
+    height: 97vh;
+    width: 97%;
+}
+
+nav {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding-top: 10px;
+    padding-left: 5%;
+    padding-right: 10%;
+    position: sticky;
+    background-color: black;
+}
+
+nav ul li {
+    list-style-type: none;
+    display: inline-block;
+    padding-top: 50px;
+    padding: 10px 20px;
+    color: white;
+    font-size: 20px;
+
+}
+
+nav ul li a {
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+nav ul li a:hover {
+    color: #E0CA3C;
+    transition: .3s;
+
+}
+
+button {
+    border: solid #E0CA3C;
+    background-color: rgba(255, 255, 0, 0.007);
+    color: white;
+    padding: 12px 30px;
+    border-radius: 30px;
+    font-weight: bold;
+    font-size: 15px;
+    cursor: pointer;
+}
+
+.header nav button {
+    width: 150px;
+
+}
+
+button:hover {
+    color: #E0CA3C;
+    transition: .3s;
+}
+
+p {
+    color: white;
+    font-size: 20px;
+    margin-bottom: 10px;
+    width: 450px;
+    margin-right: 66px;
+    margin-left: 110px;
+
+}
+
+.container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 10px;
+    width: 100%;
+}
+
+.titulo {
+    font-family: 'Roboto Mono', monospace;
+    color: white;
+    padding-top: 30px;
+    padding-left: 130px;
+    font-size: 80px;
+    margin: 0;
+}
+
+.container .caixa {
+    display: flex;
+    flex-direction: column;
+    width: 50%;
+    justify-content: center;
+    align-items: center;
+    margin-left: 100px;
+}
+
+.caixa .titulo .xxx {
+    color: #E0CA3C;
+    font-family: 'Roboto Mono', monospace;
+}
+
+.botoesDuplo {
+    display: flex;
+    flex-direction: row;
+    gap: 20px;
+    margin-top: 40px;
+    margin-right: 150px;
+    margin-left: 185px;
+}
+
+.container .imgInicial {
+    width: 50%;
+    height: auto;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+}
+
+img {
+    width: 70%;
+    height: 70%;
+}
+
+.Logo h1 {
+    color: #E0CA3C;
+    font-family: 'Inria Serif';
+    font-size: 50px;
+}
+
+
+
+
+/* Sobre Nós */
+
+.containerSobreNos {
+    margin: 0 100px 10px 0;
+    padding: 10px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+.tituloSobrenos {
+    display: flex;
+    justify-content: center;
+    margin-top: 120px;
+}
+
+.tituloSobrenos h1 {
+    color: white;
+    font-size: 50px;
+    font-family: 'Roboto Mono', monospace;
+}
+
+.tituloSobrenos span {
+    color: #E0CA3C;
+}
+
+.txtSobrenos {
+    display: flex;
+    justify-content: center;
+    margin-top: 20px;
+}
+
+.txtSobrenos p {
+    color: white;
+    width: 500px;
+    font-size: 1.4em;
+    line-height: 2rem;
+}
+
+.imgValores {
+    height: 97vh;
+
+}
+
+.imgValores img {
+    height: 100%;
+}
+
+/* Tela do Time */
+
+
+body {
+    margin: 0;
+    padding: 0;
+    background-color: black;
+}
+
+.main {
+    height: 95dvh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.container-main {
+    background: black;
+    text-align: center;
+    width: 80%;
+    margin: 0 auto;
+}
+
+.container-main h1 {
+    color: white;
+    font-size: 50px;
+}
+
+.container-main span {
+    color: #E0CA3C;
+}
+
+.container-main h4 {
+    color: white;
+}
+
+.container-img ul {
+    padding: 0;
+    list-style: none;
+    display: flex;
+    justify-content: space-between;
+}
+
+.container-img-first-row ul {
+    margin: 25px 0 25px 0;
+}
+
+.container-img-second-row ul {
+    margin: 25px 0 25px 0;
+}
+
+.container-img li {
+    background: black;
+    color: white;
+}
+
+.container-img li img {
+    height: auto;
+    max-width: 300px;
+    border: 2px solid black;
+}
+
+
+
+
+/* Tela Serviços */
+
+body {
+    margin: 0;
+    padding: 0;
+    background-color: #020200;
+}
+
+.containerServicos {
+    margin: 0;
+    padding: 10px;
+}
+
+.tituloServico {
+    display: flex;
+    justify-content: space-around;
+    margin-top: 35px;
+}
+
+.tituloServico h1 {
+    font-size: 58px;
+    font-family: 'Roboto Mono', monospace;
+}
+
+.h1Servicos {
+    color: white;
+}
+
+.cardsServicos {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+}
+
+.cardMonitoramento {
+    border: solid 1px;
+    border-color: #E0CA3C;
+    border-radius: 10px;
+    box-shadow: 0px 0px 2px 1px rgb(214, 211, 211);
+    margin: 35px;
+    width: 270px;
+}
+
+h4 {
+    color: #E0CA3C;
+    display: block;
+    margin: auto;
+    text-align: center;
+    font-size: 23px;
+    padding: 0 0 30px 0;
+}
+
+.cardMonitoramento p,
+.cardSolucoes p,
+.cardAnalise p {
+    text-align: center;
+    color: white;
+    font-size: 18px;
+    padding: 10px;
+    width: auto;
+    margin: 0 0 0 0;
+}
+
+.cardMonitoramento img,
+.cardSolucoes img,
+.cardAnalise img {
+    width: 120px;
+    height: 120px;
+
+    display: block;
+    margin: 0 auto;
+}
+
+
+
+
+
+/* Tela de Produto */
+
+body {
+    font-family: 'zen kaku gothic new', sans-serif;
+    background-color: black;
+    margin: 0;
+}
+
+.containerProduto {
+    height: 100vw;
+    width: 100%;
+    margin-bottom: 250px;
+}
+
+
+.tituloProdutos {
+    display: flex;
+    justify-content: center;
+    margin-top: 50px;
+}
+
+.tituloProdutos h1 {
+    color: white;
+    font-family: 'Roboto Mono', monospace;
+    font-size: 55px;
+}
+
+.informacoes {
+    display: flex;
+    justify-content: space-around;
+}
+
+.imgProduto {
+    display: flex;
+    width: 550px;
+    height: 300px;
+    margin-left: 60px;
+    margin-top: 50px;
+
+}
+
+.informacoesProduto {
+
+    width: 30%;
+    justify-content: center;
+    margin-right: 170px;
+}
+
+.informacoesProduto h3 {
+    color: #E0CA3C;
+    font-size: 25px;
+    font-family: 'zen kaku gothic new', sans-serif;
+    margin-left: 200px;
+}
+
+.informacoesProduto span {
+    color: white;
+}
+
+.informacoesProduto p {
+    color: white;
+    font-family: 'zen kaku gothic new', sans-serif;
+    font-size: 20px;
+}
+
+.botaoOrcamento button {
+    margin-top: 10px;
+    background-color: rgb(0, 0, 0);
+    border: solid 2px #E0CA3C;
+    color: white;
+    border-radius: 30px;
+    font-size: 15px;
+    padding: 10px;
+    margin-left: 200px;
+    margin-bottom: 180px;
+
+}
+
+
+
+
+/* Tela de contato */
+
+body {
+    background-color: black;
+    font-family: 'Zen Kaku Gothic New', sans-serif;
+}
+
+.main {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.main-container {
+    margin: 0 auto;
+    height: 90dvh;
+    width: 50%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.input-container-1 {
+    display: flex;
+}
+
+.input-column {
+    padding: 0px 20px 0px 20px;
+    display: flex;
+    flex-direction: column;
+    width: 50%;
+
+}
+
+.input-container-2 {
+    padding: 0 20px 20px 20px;
+    display: flex;
+    flex-direction: column;
+
+}
+
+input {
+    background: none;
+    border: none;
+    border-bottom: 2px solid rgba(255, 255, 255, 0.5);
+    border-radius: 0px;
+    font-size: 16px;
+    width: 300px;
+    height: 50px;
+    padding: 0 0 0 20px;
+    color: white;
+    transition: 0.5s;
+}
+
+input:hover {
+    transition: 0.5s;
+    border-radius: 0px;
+    border-bottom: 1px solid rgba(255, 255, 255, 1);
+    box-shadow: 0px 10px 19px -19px #FFFFFF;
+
+}
+
+input:focus {
+    outline: none;
+    box-shadow: 0px 10px 19px -19px #FFFFFF;
+    border-radius: 0px;
+    border-bottom: 1px solid rgba(255, 255, 255, 1);
+}
+
+.btn-container {
+    padding: 0 20px;
+}
+
+button {
+    width: 230px;
+    height: 45px;
+    font-size: 20px;
+    margin: 10px 0px 5px 0px;
+    border-radius: 99px;
+    font-style: none;
+    border: solid #E0CA3C;
+    background-color: rgba(255, 255, 0, 0.007);
+    color: white;
+}
+
+button:hover {
+    color: #E0CA3C;
+    transition: .3s;
+}
+
+textarea {
+    resize: none;
+    background: none;
+    border-bottom: 2px solid rgba(255, 255, 255, 0.5);
+    font-size: 20px;
+    width: 740px;
+    height: 150px;
+    padding: 15px 0 0 78px;
+    color: white;
+    transition: 0.5s;
+    font-family: 'Zen Kaku Gothic New', sans-serif;
+}
+
+label {
+    margin: 15px 0 2px 0;
+    color: #E0CA3C;
+    display: block;
+    font-size: 1.00em;
+    margin-block-start: 1em;
+    margin-block-end: 1em;
+    margin-inline-start: 0px;
+    margin-inline-end: 0px;
+    font-weight: bold;
+
+}
+
+.tituloContato {
+    display: flex;
+    justify-content: center;
+    margin-top: 50px;
+}
+
+.tituloContato h1 {
+    color: white;
+    font-family: 'Roboto Mono', monospace;
+    font-size: 55px;
+}
+
+/* Footer */
+
+footer {
+    background-color: #E0CA3C;
+    width: 100%;
+    height: 140px;
+    display: flex;
+    margin: 80px 0 0 0;
+}
+
+div.RedeSocial {
+    width: 33%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+div.RedeSocial img{
+    width: 50px;
+}
+
+div.contato {
+    width: 33%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+}
+

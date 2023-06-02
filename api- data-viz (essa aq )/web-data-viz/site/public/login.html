@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Login</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Zen+Kaku+Gothic+New:wght@300;900&display=swap"
+      rel="stylesheet"
+    />
+    <link href='https://fonts.googleapis.com/css?family=Inria Serif' rel='stylesheet'>
+    <link rel="stylesheet" href="./css//login.css" />
+  </head>
+
+  <body>
+    <div class="header">
+      <a href="index.html">
+
+        <h1>Apícola Tech</h1>
+      </a>
+
+    </div>
+    <div id="main">
+      <div id="posicao">
+        <h1>Entrar</h1>
+        <p>
+          Bem-vindo de volta, entre na sua conta e tenha <br />acesso aos nossos
+          serviços.
+        </p>
+        <div id="entrada">
+          <h3>Email</h3>
+          <input
+            type="email"
+            id="email"
+            placeholder="name@example.com"
+            onkeydown="verEmail()"
+          /> <br>
+          <span id="erroEmail"></span>
+        </div>
+        <div id="entrada">
+          <h3>Senha</h3>
+          <input
+            id="senha"
+            type="password"
+            placeholder="Password"
+            onkeydown="verSenha()"
+          />
+          <span id="visualSenha"
+            ><img id="olhoSenha" onclick="ocultaSenha()" src="./src/Imagens Site/closed.png" alt=""
+          /></span> <br>
+          <span id="erroSenha"></span>
+        </div>
+        <div id="linkSenha">
+          <a href="./senha.html">Esqueceu a senha?</a>
+
+        </div>
+        <div id="entrar">
+          <a id="linkbtn" onclick="entrar()">Entrar</a>
+          <div id="cadastro">
+            Não possui uma conta?<a href="Cadastro.html"> Cadastrar-se</a>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div id="erro">
+      <span id="msgErro">
+        <div>
+          <h1>Credenciais Inválidas</h1>
+          <img id="botaox" src="./src/Imagens Site/close.png" onclick="credencialErro()" alt="" />
+        </div>
+        <div>
+          <h3>Cheque se suas informações estão corretas e tente novamente</h3>
+        </div>
+        <div> <button onclick="credencialErro()" id="btnErro">Ok</button></div>
+      </span>
+    </div>
+  </body>
+
+  <script>
+    function verEmail() {
+      var email = document.querySelector("#email").value;
+      if (email.indexOf("@") == -1 || email.indexOf(".") == -1) {
+        document.querySelector('#email').style.borderBottom = "1px solid #FF3333";
+        document.querySelector('#email').style.boxShadow = " 0px 10px 19px -19px #FF3333";
+        erroEmail.style.color = '#FF3333';
+        erroEmail.innerHTML = `Insira um email válido`
+    
+      } else{
+        document.querySelector('#email').style.borderBottom = "1px solid #FFFFFF";
+        document.querySelector('#email').style.boxShadow = " 0px 10px 19px -19px #FFFFFF";
+        erroEmail.innerHTML = ``
+
+ 
+      }
+    }
+    function verSenha() {
+      var senha = document.querySelector("#senha").value;
+      if (senha.length < 11) {
+        document.querySelector('#senha').style.borderBottom = "1px solid #FF3333";
+        document.querySelector('#senha').style.boxShadow = " 0px 10px 19px -19px #FF3333";
+        erroSenha.style.color = '#FF3333';
+        erroSenha.innerHTML = `A senha possui pelo menos 11 caracteres`
+    
+      } else{
+        document.querySelector('#senha').style.borderBottom = "1px solid #FFFFFF";
+        document.querySelector('#senha').style.boxShadow = " 0px 10px 19px -19px #FFFFFF";
+        erroSenha.innerHTML = ``
+
+ 
+      }
+    }
+    function ocultaSenha() {
+      if(document.querySelector('#senha').type == 'password'){
+        visualSenha.innerHTML = `<img id="olhoSenha" onclick="ocultaSenha()" src="./src/Imagens Site/open.png" alt=""/>`
+        document.querySelector('#senha').type = 'text'
+      } else {
+        visualSenha.innerHTML = `<img id="olhoSenha" onclick="ocultaSenha()" src="./src/Imagens Site/closed.png" alt=""/>`
+        document.querySelector('#senha').type = 'password'
+      }
+    } 
+   function entrar() {
+        var email = document.querySelector('#email').value;
+        var senha = document.querySelector('#senha').value;
+        if (email == "caramico@gmail.com" && senha == "fernanda123") {
+            location.href = "./dashboard/TelaDash.html";
+        } else {
+          erro.style.display = 'block'
+        }
+      }
+      function credencialErro() {
+        erro.style.display = 'none'
+
+      }
+
+
+
+
+    function entrar() {
+       /*  aguardar(); */
+
+        var emailVar = email.value;
+        var senhaVar = senha.value;
+
+/*         if (emailVar == "" || senhaVar == "") {
+            cardErro.style.display = "block"
+            mensagem_erro.innerHTML = "(Mensagem de erro para todos os campos em branco)";
+            /* finalizarAguardar(); 
+            return false;
+        }
+        else {
+            setInterval(sumirMensagem, 5000)
+        } */
+
+        console.log("FORM LOGIN: ", emailVar);
+        console.log("FORM SENHA: ", senhaVar);
+
+        fetch("/usuarios/autenticar", {
+            method: "POST",
+            headers: {
+                "Content-Type": "application/json"
+            },
+            body: JSON.stringify({
+                emailServer: emailVar,
+                senhaServer: senhaVar
+            })
+        }).then(function (resposta) {
+            console.log("ESTOU NO THEN DO entrar()!")
+
+            if (resposta.ok) {
+                console.log(resposta);
+
+                resposta.json().then(json => {
+                    console.log(json);
+                    console.log(JSON.stringify(json));
+
+                    sessionStorage.EMAIL_USUARIO = json.email;
+                    sessionStorage.NOME_USUARIO = json.nome;
+                    sessionStorage.ID_USUARIO = json.id;
+
+                    setTimeout(function () {
+                        window.location = "./dashboard/dashboard.html";
+                    }, 1000); // apenas para exibir o loading
+
+                });
+
+            } else {
+
+                console.log("Houve um erro ao tentar realizar o login!");
+
+                resposta.text().then(texto => {
+                    console.error(texto);
+                    /* finalizarAguardar(texto); */
+                });
+            }
+
+        }).catch(function (erro) {
+            console.log(erro);
+        })
+
+        return false;
+    }
+
+  </script>
+</html>

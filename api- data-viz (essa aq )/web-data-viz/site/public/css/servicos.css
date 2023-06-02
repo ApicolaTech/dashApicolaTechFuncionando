@@ -1,0 +1,90 @@
+*{
+    font-family: 'Zen Kaku Gothic New', sans-serif;
+}
+
+body{
+    margin: 0;
+    padding: 0;
+    background-color: #020200;  
+}
+
+.containerServicos{
+    margin: 0;
+    padding: 10px;
+}
+
+ .tituloServico{
+    display: flex;
+    justify-content: space-around;
+    margin-top: 35px;
+}
+.tituloServico h1{
+    font-size: 58px;
+    font-family: 'Roboto Mono', monospace;  
+}
+
+.h1Servicos{
+   color: white;
+}
+
+.cardsServicos{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+}
+
+.cardMonitoramento{
+    border: solid 1px;
+    border-color: #E0CA3C;
+    border-radius: 10px;
+    box-shadow: 0px 0px 2px 1px rgb(214, 211, 211);
+    margin: 35px;
+    width: 270px;
+}
+.cardSolucoes{
+    border: solid 1px;
+    border-color: #E0CA3C;
+    border-radius: 10px;
+    box-shadow: 0px 0px 2px 1px rgb(214, 211, 211);
+    margin: 35px;
+    width: 270px;
+}
+.cardAnalise{
+    border: solid 1px;
+    border-color: #E0CA3C;
+    border-radius: 10px;
+    box-shadow: 0px 0px 2px 1px rgb(214, 211, 211);
+    margin: 35px;
+    width: 270px;
+}
+
+
+h4{
+    color: #E0CA3C;
+    display: block;
+    margin: auto;
+    text-align: center;
+    font-size: 23px;
+}
+
+/* p{
+    color: white;
+    display: block;
+    margin: auto;
+    font-size: 20px;
+}  */
+.cardMonitoramento p,
+.cardSolucoes p,
+.cardAnalise p {
+  text-align: center;
+  color: white;
+  font-size: 18px;  
+  padding: 10px;
+}
+
+.cardMonitoramento img,
+.cardSolucoes img,
+.cardAnalise img {
+  display: block;
+  margin: 0 auto;
+}
