@@ -16,7 +16,7 @@ function buscarUltimasMedidasTeste(idApiario) {
     } else if (process.env.AMBIENTE_PROCESSO == "desenvolvimento") {
         instrucaoSql = `
         select 
-	DataHora,
+        DATE_FORMAT(DataHora,'%H:%i:%s')  AS DataHora,
     fkApiario,
 	round(sum(case when fkSensor=(SELECT idSensor FROM Sensor WHERE fkApiario = ${idApiario} ORDER BY idSensor LIMIT 1) then Temperatura else 0 end),2) as tempI,
     round(sum(case when fkSensor=(SELECT idSensor FROM Sensor WHERE fkApiario = ${idApiario} ORDER BY idSensor DESC LIMIT 1) then Temperatura else 0 end),2) as tempE
@@ -59,7 +59,7 @@ function buscarMedidasEmTempoReal(idApiario) {
 
     } else if (process.env.AMBIENTE_PROCESSO == "desenvolvimento") {
         instrucaoSql =`select 
-        DataHora,
+        DATE_FORMAT(DataHora,'%H:%i:%s') AS DataHora,
         fkApiario,
         round(sum(case when fkSensor=(SELECT idSensor FROM Sensor WHERE fkApiario = ${idApiario} ORDER BY idSensor LIMIT 1) then Temperatura else 0 end),2) as tempI,
         round(sum(case when fkSensor=(SELECT idSensor FROM Sensor WHERE fkApiario = ${idApiario} ORDER BY idSensor DESC LIMIT 1) then Temperatura else 0 end),2) as tempE

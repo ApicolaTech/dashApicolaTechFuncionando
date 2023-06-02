@@ -85,7 +85,7 @@ function alertar(resposta, idApiario) {
     //     card = card_4
     // }
 
-    card.className = classe_temperatura;
+    // card.className = classe_temperatura;
 }
 
 function exibirAlerta(temp, idApiario, grauDeAviso, grauDeAvisoCor) {

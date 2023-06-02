@@ -321,12 +321,12 @@ th, td{
     border: 1px solid #333;
 }
 
-.alerta-scroll{
+/* .alerta-scroll{
     width: 30%;
     scroll-behavior: smooth;
     overflow-y: scroll;
     height: 100%;
-}
+} */
 
 .alerta-grafico{
     background-color: #111;

@@ -41,7 +41,7 @@
                 <a href="#alerta">Ver mais > </a>
             </div>
             <div id="ideal" class="info-card">
-                <p class="titulo-card">🌡️ Temp interna ideal</p>
+                <p class="titulo-card"></p>
                 <p class="valor-card">30-35°C</p>
                 <a href="https://abelha.org.br/pesquisador-da-dicas-para-manter-producao-de-mel-em-climas-extremos/">Saiba mais ></a>
             </div>
@@ -84,7 +84,7 @@
                 </tr>
                 <tr>
                     <td>3</td>
-                    <td>X</td>
+                    <td>I</td>
                     <td>Externo</td>
                     <td>22</td>
                     <td class="ativo">Ativo</td>
@@ -134,9 +134,9 @@
                 </table>
             </section>
         <div>
-            <p class="titulo-grafico">Apiário I - 04/05/2023</p>
+            <p class="titulo-grafico">Apiário I - 06/06/2023</p>
             <div class="alerta-apiario">
-               <div class="alerta-scroll">
+               <!-- <div class="alerta-scroll">
                     <div class="alerta-grafico critico">
                         <p>Alerta de temperatura interna baixa</p>
                         <p class="temp-alerta temp-critico">30°C</p>
@@ -152,7 +152,7 @@
                         <p class="temp-alerta alerta-temp">31°C</p>
                         <p id="temp-hora">Hoje - 05:00h</p>
                     </div>
-               </div>
+               </div> -->
 <!--                 <div class="grafico grafico-linhas">
                     <canvas id="myChart" ></canvas>
                 </div> Gráfico Antigo -->
@@ -169,13 +169,13 @@
                                 <canvas id="myChartCanvas1"></canvas>
                             </div>
                         </div>
-                        <div id="avisoCaptura1"></div>
+                        <!-- <div id="avisoCaptura1"></div> -->
                     
                     </div>
             </div>
         </div>
 
-        <div>
+        <!-- <div>
             <p class="titulo-grafico">Apiário II - 04/05/2023</p>
             <div class="alerta-apiario">
                <div class="alerta-scroll">
@@ -194,20 +194,11 @@
                         <p class="temp-alerta alerta-temp">31°C</p>
                         <p id="temp-hora">Hoje - 05:00h</p>
                     </div>
-               </div>
+               </div> -->
 <!--                 <div class="grafico grafico-linhas">
                     <canvas id="myChart2" ></canvas>
                 </div> -->
-                <div id="grafiTexto">
-                <div id="grafico1" class="display-block">
-                    <h3 class="tituloGraficos">
-                        <span id="tituloAquario2">123</span> <!-- Aqui pega o id pra mudar o titulo no js -->
-                    </h3>
-                    <div class="graph">
-                        <canvas id="myChartCanvas2"></canvas> <!-- aqui pega o id pra geraro grafico -->
-                    </div>
-                </div>
-                </div>
+                
 
             </div>
         </div>
@@ -226,7 +217,7 @@ window.onload = obterDadosGraficos();
 
 function obterDadosGraficos() {
     obterDadosGrafico(1)
-    obterDadosGrafico(2)
+    
 
 }
 
@@ -234,7 +225,7 @@ function obterDadosGraficos() {
 
 function alterarTitulo(idApiario) {
     var tituloAquario = document.getElementById(`tituloAquario${idApiario}`)
-    tituloAquario.innerHTML = "Últimas medidas de tempExterna e tempInterna do <span style='color: #e6005a'>Apiário " + idApiario + "</span>"
+    tituloAquario.innerHTML = "Últimas medidas de temperatura externa e temperatura interna do <span style='color: #e6005a'>Apiário " + idApiario + "</span>"
 }
 /* 
 function exibirAquario(idApiario) {
@@ -319,14 +310,14 @@ function plotarGrafico(resposta, idApiario) {
     let dados = {
         labels: labels,
         datasets: [{
-            label: 'tempInterna',
+            label: 'Temperatura Interna',
             data: [],
             fill: false,
             borderColor: 'rgb(75, 192, 192)',
             tension: 0.1
         },
         {
-            label: 'tempExterna',
+            label: 'Temperatura Externa',
             data: [],
             fill: false,
             borderColor: 'rgb(199, 52, 52)',
@@ -341,7 +332,7 @@ function plotarGrafico(resposta, idApiario) {
     // Inserindo valores recebidos em estrutura para plotar o gráfico
     for (i = 0; i < resposta.length; i++) {
         var registro = resposta[i];
-        labels.push(registro.dataLeitura);
+        labels.push(registro.DataHora);
         dados.datasets[0].data.push(registro.tempI);
         dados.datasets[1].data.push(registro.tempE);
     }
@@ -393,25 +384,25 @@ function atualizarGrafico(idApiario, dados, myChart) {
                 avisoCaptura.innerHTML = ""
 
 
-                if (novoRegistro[0].dataLeitura == dados.labels[dados.labels.length - 1]) {
+                if (novoRegistro[0].DataHora == dados.labels[dados.labels.length - 1]) {
                     console.log("---------------------------------------------------------------")
                     console.log("Como não há dados novos para captura, o gráfico não atualizará.")
                     avisoCaptura.innerHTML = "<i class='fa-solid fa-triangle-exclamation'></i> Foi trazido o dado mais atual capturado pelo sensor. <br> Como não há dados novos a exibir, o gráfico não atualizará."
                     console.log("Horário do novo dado capturado:")
-                    console.log(novoRegistro[0].dataLeitura)
+                    console.log(novoRegistro[0].DataHora)
                     console.log("Horário do último dado capturado:")
                     console.log(dados.labels[dados.labels.length - 1])
                     console.log("---------------------------------------------------------------")
                 } else {
                     // tirando e colocando valores no gráfico
                     dados.labels.shift(); // apagar o primeiro
-                    dados.labels.push(novoRegistro[0].dataLeitura); // incluir um novo momento
+                    dados.labels.push(novoRegistro[0].DataHora); // incluir um novo momento
 
                     dados.datasets[0].data.shift();  // apagar o primeiro de tempInterna
-                    dados.datasets[0].data.push(novoRegistro[0].tempInterna); // incluir uma nova medida de tempInterna
+                    dados.datasets[0].data.push(novoRegistro[0].tempI); // incluir uma nova medida de tempInterna
 
                     dados.datasets[1].data.shift();  // apagar o primeiro de tempExterna
-                    dados.datasets[1].data.push(novoRegistro[0].tempExterna); // incluir uma nova medida de tempExterna
+                    dados.datasets[1].data.push(novoRegistro[0].tempE); // incluir uma nova medida de tempExterna
 
                     myChart.update();
                 }
