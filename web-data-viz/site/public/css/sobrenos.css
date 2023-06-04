@@ -1,0 +1,50 @@
+*{
+    font-family: 'Zen Kaku Gothic New', sans-serif;
+}
+
+body{
+    margin: 0;
+    padding: 0;
+    background-color: #020200;
+}
+
+.containerSobreNos{
+    margin: 0;
+    padding: 10px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+.tituloSobrenos{
+    display: flex;
+    justify-content: center;
+    margin-top: 120px;
+}
+.tituloSobrenos h1{
+    color: white;
+    font-size: 50px;
+    font-family: 'Roboto Mono', monospace; 
+}
+.tituloSobrenos span{
+    color: #E0CA3C;
+}
+
+.txtSobrenos{
+    display: flex;
+    justify-content: center;
+    margin-top: 20px;
+}
+.txtSobrenos p{
+    color: white;
+    width: 500px;
+    font-size: 1.4em;
+    line-height: 2rem;
+}
+
+.imgValores{
+    height: 97vh;
+}
+.imgValores img{
+    height: 100%;
+}
