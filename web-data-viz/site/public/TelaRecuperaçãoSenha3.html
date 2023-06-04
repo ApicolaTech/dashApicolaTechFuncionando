@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>novasenha</title>
+    <link rel="stylesheet" href="./TelaRecuperaçãoSenha3.css">
+</head>
+<body>
+    <div class="novasenha">
+        <h1>Apícola Tech</h1>  
+    </div>
+    <div class="caixa_novaSenha">
+        <div class="regua">
+            <h2>Recuperar Senha</h2>  
+            <p>Nova senha</p>
+            <input id="input_senha"
+            placeholder="Xxx0!">
+            <p>Repita a nova senha</p>
+            <input id="input_repetir"
+            placeholder="Xxx0!">
+            <button onclick="entrar()">Entrar</button>
+            <div style="color: honeydew;" id="mensagem"></div>
+        </div>
+    </div>
+
+</body>
+</html>
+<script>
+    function entrar(){
+        var senha = input_senha.value
+        var repetir = input_repetir.value
+        mensagem.innerHTML = ''
+
+        if(senha == 'fernanda123'){
+            window.location.href = './TelaDash.html'
+        } else {
+            alert("Senha fraca, tente novamente") 
+        }
+        
+    }
+</script>

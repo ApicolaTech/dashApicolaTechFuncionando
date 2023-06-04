@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Simulador</title>
+<<<<<<< HEAD
+    <link rel="stylesheet" href="./simul.css" />
+=======
+    <link rel="stylesheet" href="./style/simul.css" />
+>>>>>>> 70aa7fb256468e38817491bf80f21b9c6511e936
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Zen+Kaku+Gothic+New:wght@300;900&display=swap"
+      rel="stylesheet"
+    />
+<<<<<<< HEAD
+    <link href='https://fonts.googleapis.com/css?family=Inria Serif' rel='stylesheet'>
+=======
+>>>>>>> 70aa7fb256468e38817491bf80f21b9c6511e936
+  </head>
+  <body>
+    <div id="nav">
+      <nav>
+<<<<<<< HEAD
+        <div class="logo">
+          <a href="./index.html">
+
+            <h1>Apícola Tech</h1>
+          </a>
+        </div>
+=======
+        <div class="Logo">
+          <h1>Apícola Tech</h1>
+        </div>
+        <ul>
+          <li><a href="#">Sobre nós</a></li>
+          <li><a href="#">Time</a></li>
+          <li><a href="#">Serviços</a></li>
+          <li><a href="#">Produtos</a></li>
+          <li><a href="#">Contato</a></li>
+        </ul>
+>>>>>>> 70aa7fb256468e38817491bf80f21b9c6511e936
+        <a href="login.html"><button type="button">Entrar</button></a>
+      </nav>
+    </div>
+    <div id="titulo">
+      <h2>Simule Agora</h2>
+      <p>Veja onde seu negócio pode chegar!</p>
+    </div>
+    <div id="conteudo">
+      <div id="entrada">
+        <label for="">
+          <h2>Quantos apiários você possui?</h2>
+        </label>
+        <input type="number" id="apiarioI" placeholder="Número de apiários" />
+        <h2>Quantos quilos de mel as suas abelhas produzem por ano?</h2>
+        <input type="number" id="melI" placeholder="Quilos de mel" />
+        <button onclick="analise()" id="analise">Ánalise de Produção</button>
+      </div>
+      <div id="saida">
+        <div id="producaoPorcentagem"></div>
+        <div id="producaoApiario"></div>
+        <div id="venda"></div>
+      </div>
+    </div>
+  </body>
+</html>
+<script>
+  function analise() {
+      var apiario = Number(apiarioI.value); /* qtd Apiario */
+      var mel = Number(melI.value); /* qtd Mel */
+      var precoMel = 40; /* preço médio do kilo do mel */
+    var mediaMel =
+      apiario *
+      25; 
+    var valorTotal =
+      mel * precoMel; /* multiplica o mel inserido pelo seu preço */
+    var valorTotalEsperado =
+      mediaMel *
+      precoMel; /* multiplica o mel feito pela média de abelhas pelo preço */
+    var porcentagemEsperado = (mel/mediaMel)*100 - 100;
+
+      ; /* calcula a porcentagem de um mel sobre o outro(média) */
+    producaoPorcentagem.innerHTML = ``
+    producaoApiario.innerHTML = ``
+    venda.innerHTML = ``
+    if (apiario == "") {
+
+    } else if (mel < mediaMel) {
+<<<<<<< HEAD
+        producaoPorcentagem.innerHTML = `<img src="./Imagens Site/decrease.png" alt="">
+                <span>Sua produção de mel ficou ${Math.abs(porcentagemEsperado.toFixed(2))}% <span style="color: #FF0000;">abaixo</span> para <b style="color: #FFFF00;">${apiario}</b> apiários, e seu faturamento foi de apenas <b style="color: #ff0000;">R$${valorTotal}</b>.</span>`;
+        producaoApiario.innerHTML += `<img src="./Imagens Site/apiary.png" alt="">
+                <span>A produção média de <span style="color: #FFFF00;">${apiario}</span> apiários é de <span style="color: #FFD700;">${mediaMel}kg</span> enquanto o seu foi de meramente <span style="color: #f52d2d;">${mel}kg</span>, <span style="color: #00ff2a;">${mediaMel-mel}kg</span> a menos</span>`;
+        venda.innerHTML += `<img src="./Imagens Site/monitoring.png" alt="">
+                <span>A nossa solução te dará uma visão detalhada de seus apiários, permitindo uma análise precisa de gargalos, pontos de melhoria e como melhorar sua produção, consequentemente, seus resultados e com isso aumentar seus faturamento em até <span style="color: #00ff2a;">15%</span> ou <span style="color: #00ff2a;">R$${valorTotal*0.15}</span> </span>
+            `;
+    } else if(mel == mediaMel) {
+      producaoPorcentagem.innerHTML = `<img src="./Imagens Site/fast-forward.png" alt="">
+                <span>Sua produção de mel alcançou a produção <span style="color: #9999FF;">esperada</span> para <b style="color: #FFFF00;">${apiario}</b> apiários, e seu faturamento foi de <b style="color: #00ff2a;">R$${valorTotal}</b>.</span>`;
+      producaoApiario.innerHTML += `<img src="./Imagens Site/apiary.png" alt="">
+                <span>A produção média de <span style="color: #FFFF00;">${apiario}</span> apiários é de <span style="color: #FFD700;">${mediaMel}kg</span>, felizmente não houve desperdicio</span>`;
+      venda.innerHTML += `<img src="./Imagens Site/monitoring.png" alt="">
+                <span>A nossa solução te dará uma visão detalhada de seus apiários, permitindo uma análise precisa de gargalos, pontos de melhoria e como manter sua produção, consequentemente, seus resultados e com isso conservar seu <b style="color: #00ff2a;">faturamento</b></span>
+            `;
+    } else if (mel > mediaMel) {
+      producaoPorcentagem.innerHTML = `<img src="./Imagens Site/trend.png" alt="">
+                <span>Sua produção de mel ficou ${porcentagemEsperado.toFixed(2)}% <span style="color: #00ff2a;">acima</span> para <b style="color: #FFFF00;">${apiario}</b> apiários, e seu faturamento foi de <b style="color: #00ff2a;">R$${valorTotal}</b>.</span>`;
+      producaoApiario.innerHTML += `<img src="./Imagens Site/apiary.png" alt="">
+                <span>A produção média de <span style="color: #FFFF00;">${apiario}</span> apiários é de <span style="color: #FFD700;">${mediaMel}kg</span> enquanto o seu foi de <span style="color: #00ff2a;">${mel}kg</span>, <span style="color: #00ff2a;">${mel-mediaMel}kg</span> a mais</span>`;
+      venda.innerHTML += `<img src="./Imagens Site/monitoring.png" alt="">
+=======
+        producaoPorcentagem.innerHTML = `<img src="./src/decrease.png" alt="">
+                <span>Sua produção de mel ficou ${Math.abs(porcentagemEsperado.toFixed(2))}% <span style="color: #FF0000;">abaixo</span> para <b style="color: #FFFF00;">${apiario}</b> apiários, e seu faturamento foi de apenas <b style="color: #ff0000;">R$${valorTotal}</b>.</span>`;
+        producaoApiario.innerHTML += `<img src="./src/apiary.png" alt="">
+                <span>A produção média de <span style="color: #FFFF00;">${apiario}</span> apiários é de <span style="color: #FFD700;">${mediaMel}kg</span> enquanto o seu foi de meramente <span style="color: #f52d2d;">${mel}kg</span>, <span style="color: #00ff2a;">${mediaMel-mel}kg</span> a menos</span>`;
+        venda.innerHTML += `<img src="./src/monitoring.png" alt="">
+                <span>A nossa solução te dará uma visão detalhada de seus apiários, permitindo uma análise precisa de gargalos, pontos de melhoria e como melhorar sua produção, consequentemente, seus resultados e com isso aumentar seus faturamento em até <span style="color: #00ff2a;">15%</span> ou <span style="color: #00ff2a;">R$${valorTotal*0.15}</span> </span>
+            `;
+    } else if(mel == mediaMel) {
+      producaoPorcentagem.innerHTML = `<img src="./src/fast-forward.png" alt="">
+                <span>Sua produção de mel alcançou a produção <span style="color: #9999FF;">esperada</span> para <b style="color: #FFFF00;">${apiario}</b> apiários, e seu faturamento foi de <b style="color: #00ff2a;">R$${valorTotal}</b>.</span>`;
+      producaoApiario.innerHTML += `<img src="./src/apiary.png" alt="">
+                <span>A produção média de <span style="color: #FFFF00;">${apiario}</span> apiários é de <span style="color: #FFD700;">${mediaMel}kg</span>, felizmente não houve desperdicio</span>`;
+      venda.innerHTML += `<img src="./src/monitoring.png" alt="">
+                <span>A nossa solução te dará uma visão detalhada de seus apiários, permitindo uma análise precisa de gargalos, pontos de melhoria e como manter sua produção, consequentemente, seus resultados e com isso conservar seu <b style="color: #00ff2a;">faturamento</b></span>
+            `;
+    } else if (mel > mediaMel) {
+      producaoPorcentagem.innerHTML = `<img src="./src/trend.png" alt="">
+                <span>Sua produção de mel ficou ${porcentagemEsperado.toFixed(2)}% <span style="color: #00ff2a;">acima</span> para <b style="color: #FFFF00;">${apiario}</b> apiários, e seu faturamento foi de <b style="color: #00ff2a;">R$${valorTotal}</b>.</span>`;
+      producaoApiario.innerHTML += `<img src="./src/apiary.png" alt="">
+                <span>A produção média de <span style="color: #FFFF00;">${apiario}</span> apiários é de <span style="color: #FFD700;">${mediaMel}kg</span> enquanto o seu foi de <span style="color: #00ff2a;">${mel}kg</span>, <span style="color: #00ff2a;">${mel-mediaMel}kg</span> a mais</span>`;
+      venda.innerHTML += `<img src="./src/monitoring.png" alt="">
+>>>>>>> 70aa7fb256468e38817491bf80f21b9c6511e936
+                <span>A nossa solução te dará uma visão detalhada de seus apiários, permitindo uma análise precisa de gargalos, pontos de melhoria e como manter e até melhorar sua produção, consequentemente, seus resultados e com isso conservar seu faturamento </span>
+            `;
+  }
+}
+</script>
+

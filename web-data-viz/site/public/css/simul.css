@@ -1,0 +1,270 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: content-box;
+    font-family: 'Zen Kaku Gothic New', sans-serif;
+}
+<<<<<<< HEAD
+
+body {
+    background-color: #000000;
+    background-size: 100vw;
+
+    background-repeat: no-repeat;
+}
+
+#titulo {
+    color: #000000;
+    padding: 30px 0 30px 0px;
+
+=======
+body {
+    background-color: #000000;
+        background-size: 100vw;
+
+    background-repeat: no-repeat;
+}
+#titulo {
+    color: #000000;
+    padding: 30px 0 30px 0px;
+    
+>>>>>>> 70aa7fb256468e38817491bf80f21b9c6511e936
+    border-top: #111111 5px solid;
+    font-size: 24px;
+    background-color: #ffe70f;
+    width: 100vw;
+    font-weight: bold;
+
+<<<<<<< HEAD
+
+
+}
+
+#titulo h2,
+p {
+    margin: 0 0 0 40px;
+}
+
+=======
+}
+.Logo h1 {
+    color: #E0CA3C;
+    font-family: 'Inria Serif';
+    font-size: 50px;
+}
+#titulo h2,p {
+    margin: 0 0 0 40px;
+}
+>>>>>>> 70aa7fb256468e38817491bf80f21b9c6511e936
+#nav {
+    background-color: none;
+    width: 100vw;
+    height: 3vh;
+<<<<<<< HEAD
+    margin: 0 0 9vh 0;
+
+}
+
+=======
+    margin: 0 0 7vh 0;
+
+}
+>>>>>>> 70aa7fb256468e38817491bf80f21b9c6511e936
+#conteudo {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 60vh;
+    background-color: #111111;
+    border-bottom: #ffe70f 5px solid;
+    font-size: 18px;
+    padding: 8px 0 10px 0;
+}
+
+#entrada {
+    color: white;
+    display: flex;
+    flex-direction: column;
+    align-items: left;
+    justify-content: center;
+    width: 40vw;
+    margin: 0 0px 0 80px;
+    border-right: #ffe70f 5px solid;
+
+}
+<<<<<<< HEAD
+
+#saida {
+    width: 50vw;
+}
+
+=======
+#saida {
+    width: 50vw;
+}
+>>>>>>> 70aa7fb256468e38817491bf80f21b9c6511e936
+input {
+    background: none;
+    border: none;
+    border-bottom: 2px solid rgba(255, 255, 255, 0.5);
+    font-size: 20px;
+    width: 17vw;
+    height: 50px;
+    padding: 0 0 0 20px;
+    margin: 0 0 20px 0;
+    color: white;
+    transition: 0.5s;
+<<<<<<< HEAD
+}
+
+input:hover {
+    transition: 0.5s;
+    border-radius: 0px;
+    border-bottom: 1px solid rgba(255, 255, 255, 1);
+    box-shadow: 0px 10px 19px -19px #FFFFFF;
+
+}
+
+input:focus {
+    outline: none;
+    box-shadow: 0px 10px 19px -19px #FFFFFF;
+    border-radius: 0px;
+    border-bottom: 1px solid rgba(255, 255, 255, 1);
+}
+
+button {
+=======
+  }
+  input:hover {
+      transition: 0.5s;
+      border-radius: 0px;
+      border-bottom: 1px solid rgba(255, 255, 255, 1);
+      box-shadow: 0px 10px 19px -19px #FFFFFF;
+  
+  }
+  input:focus {
+  outline: none;
+  box-shadow: 0px 10px 19px -19px #FFFFFF;
+    border-radius: 0px;
+    border-bottom: 1px solid rgba(255, 255, 255, 1);
+  }
+
+button{
+>>>>>>> 70aa7fb256468e38817491bf80f21b9c6511e936
+    border: solid #E0CA3C;
+    background-color: rgba(255, 255, 0, 0.007);
+    color: white;
+    padding: 12px 30px;
+    border-radius: 30px;
+    font-weight: bold;
+    font-size: 15px;
+    cursor: pointer;
+}
+<<<<<<< HEAD
+
+button:hover {
+    color: #ffe70f;
+}
+
+
+nav {
+=======
+button:hover {
+color: #ffe70f;
+}
+
+
+nav{
+>>>>>>> 70aa7fb256468e38817491bf80f21b9c6511e936
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 10px 10% 0 5%;
+}
+
+
+<<<<<<< HEAD
+nav ul li {
+=======
+nav ul li{
+>>>>>>> 70aa7fb256468e38817491bf80f21b9c6511e936
+    list-style-type: none;
+    display: inline-block;
+    padding-top: 50px;
+    padding: 10px 20px;
+    color: white;
+    font-size: 20px;
+}
+<<<<<<< HEAD
+
+nav ul li a {
+=======
+nav ul li a{
+>>>>>>> 70aa7fb256468e38817491bf80f21b9c6511e936
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+}
+<<<<<<< HEAD
+
+nav ul li a:hover {
+=======
+nav ul li a:hover{
+>>>>>>> 70aa7fb256468e38817491bf80f21b9c6511e936
+    color: #E0CA3C;
+    transition: .3s;
+}
+
+<<<<<<< HEAD
+.logo h1 {
+
+    height: 48px;
+    justify-content: center;
+    padding: 10px 0;
+    color: #E0CA3C;
+    font-family: 'Inria Serif';
+    font-size: 50px;
+}
+
+.logo a {
+    text-decoration: none;
+
+}
+=======
+.logo{
+    width: 300px;
+    height: 48px;
+ }
+>>>>>>> 70aa7fb256468e38817491bf80f21b9c6511e936
+
+button#analise {
+    margin: 0 0 0 20px;
+    width: 150px;
+}
+
+#saida {
+    width: 50%;
+    color: white;
+    font-size: 20px;
+    margin: 0 0 0 20px;
+    font-weight: bold;
+}
+
+#saida img {
+    width: 50px;
+    margin: 0 20px 0 0;
+}
+<<<<<<< HEAD
+
+#saida div {
+    display: flex;
+    align-items: center;
+    margin: 20px 20px 0 0;
+}
+=======
+#saida div{
+    display: flex;
+    align-items: center;
+    margin: 20px 20px 0 0;
+}
+>>>>>>> 70aa7fb256468e38817491bf80f21b9c6511e936
