@@ -12,6 +12,7 @@
     font-family: 'Poppins', sans-serif;
 }
 
+
 /* Estilo para a scrollbar */
 ::-webkit-scrollbar {
     width: 8px;
@@ -108,19 +109,6 @@ h1, h2{
     width: 60%;
 }
 
-/* input[type='search']{
-    width: 40%;
-    margin: 1em 0 1em 3em;
-    background-color: #222;
-    border-radius: 1em;
-    padding: 1em;
-    outline: 0;
-}
-
-input[type='search']:focus{
-    border: 1px solid rgb(235, 232, 56);
-} */
-
 #menu-user a{
     transition: color .5s;
     font-weight: bold;
@@ -203,11 +191,11 @@ input[type='search']:focus{
 }
 
 #colmeias{
-    border: 1px solid rgb(235, 232, 56);
+    border: 1px solid rgb(173, 88, 135);
 }
 
 #colmeias:hover{
-    box-shadow: .3em .3em rgb(235, 232, 56);
+    box-shadow: .3em .3em rgb(173, 88, 135);
 }
 
 #sensores{
@@ -293,21 +281,21 @@ td{
     border-color: #ff0e0e;
 }
 .titulo-emergencia1{
-    border-color: rgb(32, 86, 204);
+    border-color: #2056cc;
 }
 .titulo-emergencia2{
-    border-color: rgb(241, 128, 22);
+    border-color: #f18016;
 }
 
 .titulo-alerta1{
-    border-color: rgb(52, 198, 243);
+    border-color: #5f8be9;
 }
 .titulo-alerta2{
-    border-color: rgb(252, 237, 27);
+    border-color: #ddd900;
 }
 
 .titulo-ideal{
-    border-color: green;
+    border-color: #008000;
 }
 
 .acompanhamento{
@@ -381,7 +369,7 @@ td{
 }
 
 .temp-ideal{
-    color: aquamarine;
+    color: rgb(92, 198, 224);
     background-color: #fff2;
     border-radius: 1em;
     padding: .2em;
@@ -465,4 +453,22 @@ select, option{
 
 #exibe2{
     display: block;
+}
+
+.containerAlertas{
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-evenly;
+width: 50%;
+}
+
+.boxAlertas  {
+    font-size: 18px;
+    align-items: center;
+    display: flex;
+    width: 45%;
+    height: 45%;
+    border-radius: 10px;
+    text-align: center;
 }

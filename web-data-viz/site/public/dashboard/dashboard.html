@@ -28,21 +28,11 @@
             <a href="#" id="user-img"><img src="./src/Imagens Site/user.png" alt=""></a>
         </ul> -->
     </nav>
+    
 
     <div id="conteudo">
-        <h1>Olá, <span id="nomedinamico"></span>. Seja bem-vinda!</h1>
-        
+        <h1>Olá, <span id="nomedinamico"></span>. Seja bem-vinda!ㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤAlertas</h1> 
         <div id="info">
-            <!-- <div id="alertas" class="info-card">
-                <p class="titulo-card">⚠️ Alertas</p>
-                <p style="color: red;" class="valor-card">2</p>
-                <a href="#alerta">Ver mais > </a>
-            </div> -->
-            <!-- <div id="ideal" class="info-card">
-                <p class="titulo-card"></p>
-                <p class="valor-card">30-35°C</p>
-                <a href="https://abelha.org.br/pesquisador-da-dicas-para-manter-producao-de-mel-em-climas-extremos/">Saiba mais ></a>
-            </div> -->
             <div id="colmeias" class="info-card">
                 <p class="titulo-card">🐝 Total Apiários</p>
                 <p class="valor-card">2</p>
@@ -53,10 +43,118 @@
                 <p class="valor-card">4</p>
                 <a href="#alerta">Ver Tabela ></a>
             </div>
+
+            <div class="containerAlertas">
+                
+                <div id="caixaAlertaInterno1" class="boxAlertas" >
+                </div>
+                <div  id="caixaAlertaInterno2" class="boxAlertas" >
+                    
+                </div>
+                <div  id="caixaAlertaExterno1" class="boxAlertas">
+                </div>
+                <div id="caixaAlertaExterno2" class="boxAlertas">
+                </div>
+            </div>
+        </div>
+
+        <h2 id="alerta"> Legenda - Alertas de temperatura </h2>
+            <section class="acompanhamento"> <a name="alerta"></a>
+                <table id="tabela-risco">
+                    <tr>
+                        <p class="titulo-tabela">Temperatura interna</p>
+                        <th class="titulo-critico1">Crítico</th>
+                        <th class="titulo-emergencia1">Emergência</th>
+                        <th class="titulo-alerta1">Alerta</th>
+                        <th class="titulo-ideal">Ideal</th>
+                        <th class="titulo-alerta2">Alerta</th>
+                        <th class="titulo-emergencia2">Emergência</th>
+                        <th class="titulo-critico2">Crítico</th>
+                    </tr>
+                    <tr>
+                        <td class="titulo-critico1">30.0 °C</td>
+                        <td class="titulo-emergencia1">31.5 °C</td>
+                        <td class="titulo-alerta1">32.5 °C</td>
+                        <td class="titulo-ideal" >33.1 °C - 33.5 °C</td>
+                        <td class="titulo-alerta2">33.9 °C</td>
+                        <td class="titulo-emergencia2">34.3 °C</td>
+                        <td class="titulo-critico2">35.0 °C</td>
+                    </tr>
+                    </table> <br>
+                <table id="tabela-risco">
+                    <tr>
+                        <p class="titulo-tabela">Temperatura externa</p>
+                        <th class="titulo-critico1">Crítico</th>
+                        <th class="titulo-emergencia1">Emergência</th>
+                        <th class="titulo-alerta1">Alerta</th>
+                        <th class="titulo-ideal">Ideal</th>
+                        <th class="titulo-alerta2">Alerta</th>
+                        <th class="titulo-emergencia2">Emergência</th>
+                        <th class="titulo-critico2">Crítico</th>
+                        </tr>
+                    <tr>
+                        <td class="titulo-critico1">22.0 °C</td>
+                        <td class="titulo-emergencia1">23.8 °C</td>
+                        <td class="titulo-alerta1">24.4 °C</td>
+                        <td class="titulo-ideal">25.1 °C - 25.7 °C</td>
+                        <td class="titulo-alerta2">26.0 °C</td>
+                        <td class="titulo-emergencia2">26.6 °C</td>
+                        <td class="titulo-critico2">27.0 °C</td>
+                    </tr>
+                </table>
+            </section>
+        <div> 
+            <select name="#" id="combo" onchange="exibe()">
+                <option value="- Selecione o Apiário- ">- Selecione o Apiário -</option>
+                <option value="apiario1">Apiário 1</option>
+                <option value="apiario2">Apiário 2</option>
+           </select>
+        </div>
+
+    <div  id="exibe1">
+        <p class="titulo-grafico">Apiário I - 06/06/2023</p>
+        <div class="alerta-apiario" > <a name="verApiarios"></a>
+           <div id="grafiTexto">
+                <div id="grafico1" class="display-block">
+                    <h3 class="tituloGraficos">
+                        <span id="tituloAquario1">123</span> <!-- Aqui pega o id pra mudar o titulo no js -->
+                    </h3>
+                    <div class="graph">
+                        <canvas id="myChartCanvas1"></canvas>
+                    </div>
+                </div>
+                    
+                <div id="avisoCaptura1"></div>
+                    <!-- <div id="avisoCaptura1"></div> -->
+            </div>
+
+        </div>
+    </div>
+
+        <!-- DIV GRAFICO 2 -->
+        <div id="exibe2">
+            <div>
+               <p class="titulo-grafico">Apiários - 06/06/2023</p>
+               <div id="grafiTexto">
+                       
+                       
+                   <div id="grafico2" class="display-block">
+                       <h3 class="tituloGraficos">
+                           <span id="tituloAquario2">123</span> <!-- Aqui pega o id pra mudar o titulo no js -->
+                       </h3>
+                       <div class="graph">
+                           <canvas id="myChartCanvas2"></canvas>
+                       </div>
+                   </div>
+                        <div id="avisoCaptura2"></div>
+                   <!-- <div id="avisoCaptura1"></div> -->
+               
+               </div>
+           </div>
         </div>
 
         <h2 id="acompanhamento">Sensores</h2>
-
+        
         <section class="acompanhamento">
             <table>
                 <tr>
@@ -77,7 +175,7 @@
                     <td>2</td>
                     <td>Apiário 1</td>
                     <td>Externo</td>
-                  
+                    
                     <td class="ativo">Ativo</td>
                 </tr>
 
@@ -98,114 +196,23 @@
                 </tr>
             </table>
         </section> 
-
-        <h2 id="alerta"> Legenda - Alertas de temperatura </h2>
-            <section class="acompanhamento"> <a name="alerta"></a>
-                <table id="tabela-risco">
-                    <tr>
-                        <p class="titulo-tabela">Temperatura interna</p>
-                        <th class="titulo-critico1">Crítico</th>
-                        <th class="titulo-emergencia1">Emergência</th>
-                        <th class="titulo-alerta1">Alerta</th>
-                        <th class="titulo-ideal">Ideal</th>
-                        <th class="titulo-alerta2">Alerta</th>
-                        <th class="titulo-emergencia2">Emergência</th>
-                        <th class="titulo-critico2">Crítico</th>
-                    </tr>
-                    <tr>
-                        <td class="titulo-critico1">30.0°C-</td>
-                        <td class="titulo-emergencia1">31.5°C</td>
-                        <td class="titulo-alerta1">32.5°C-</td>
-                        <td class="titulo-ideal" >33.1°C - 33.5°C</td>
-                        <td class="titulo-alerta2">33.9°C-</td>
-                        <td class="titulo-emergencia2">34.3</td>
-                        <td class="titulo-critico2">35.0°C + </td>
-                    </tr>
-                    </table> <br>
-                <table id="tabela-risco">
-                    <tr>
-                        <p class="titulo-tabela">Temperatura externa</p>
-                        <th class="titulo-critico1">Crítico</th>
-                        <th class="titulo-emergencia1">Emergência</th>
-                        <th class="titulo-alerta1">Alerta</th>
-                        <th class="titulo-ideal">Ideal</th>
-                        <th class="titulo-alerta2">Alerta</th>
-                        <th class="titulo-emergencia2">Emergência</th>
-                        <th class="titulo-critico2">Crítico</th>
-                        </tr>
-                    <tr>
-                        <td class="titulo-critico1">22°C-</td>
-                        <td class="titulo-emergencia1">31.5°C</td>
-                        <td class="titulo-alerta1">24.4°C-</td>
-                        <td class="titulo-ideal">25.1°C - 25.7°C</td>
-                        <td class="titulo-alerta2">26.0°C-</td>
-                        <td class="titulo-emergencia2">31.5°C</td>
-                        <td class="titulo-critico2">27°C +</td>
-                    </tr>
-                </table>
-            </section>
-        <div> 
-            <select name="#" id="combo" onchange="exibe()">
-            <option value="- Selecione o Apiário- ">- Selecione o Apiário -</option>
-            <option value="1">Apiário 1</option>
-            <option value="2">Apiário 2</option>
-        </select>
-
     </div>
-    <div  id="exibe1">
-        <p class="titulo-grafico">Apiário I - 06/06/2023</p>
-        <div class="alerta-apiario" > <a name="verApiarios"></a>
-           
-                <div id="grafiTexto">
-                
-                
-                    <div id="grafico1" class="display-block">
-                        <h3 class="tituloGraficos">
-                            <span id="tituloAquario1">123</span> <!-- Aqui pega o id pra mudar o titulo no js -->
-                        </h3>
-                        <div class="graph">
-                            <canvas id="myChartCanvas1"></canvas>
-                        </div>
-                    </div>
-                    <div id="avisoCaptura1"></div>
-                    <!-- <div id="avisoCaptura1"></div> -->
-                
-                </div>
-
-        </div>
     </div>
-
-        <!-- DIV GRAFICO 2 -->
-        <div id="exibe2">
-            <div>
-               <p class="titulo-grafico">Apiário II - 04/05/2023</p>
-               <div id="grafiTexto">
-                       
-                       
-                   <div id="grafico2" class="display-block">
-                       <h3 class="tituloGraficos">
-                           <span id="tituloAquario2">123</span> <!-- Aqui pega o id pra mudar o titulo no js -->
-                       </h3>
-                       <div class="graph">
-                           <canvas id="myChartCanvas2"></canvas>
-                       </div>
-                   </div>
-                   <div id="avisoCaptura2"></div>
-                   <!-- <div id="avisoCaptura1"></div> -->
-               
-               </div>
-           </div>
-
-        </div>
-
-            </div>
-        </div>
-    </div>
+</div>
 </body>
 
 <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 <script>
+
+    function filtrar(){
+        var select = document.getElementById("")
+        var opcaoSelecionada = select.value;
+
+        if(opcaoSelecionada === apiario1){
+            
+        }
+    }
  
     function exibe(){
         var apiAtual = combo.value;
@@ -230,14 +237,14 @@ window.onload = obterDadosGraficos();
 function obterDadosGraficos() {
     obterDadosGrafico(1)
     obterDadosGrafico(2)
-
+    
 }
 
 /*verificar_autenticacao();*/
 
 function alterarTitulo(idApiario) {
     var tituloAquario = document.getElementById(`tituloAquario${idApiario}`)
-    tituloAquario.innerHTML = "Últimas medidas de temperatura externa e temperatura interna</span>"
+    // tituloAquario.innerHTML = "Últimas medidas de temperatura externa e temperatura interna</span>"
 }
 /* 
 function exibirAquario(idApiario) {
@@ -370,8 +377,9 @@ function plotarGrafico(resposta, idApiario) {
         config
     );
 
-    setTimeout(() => atualizarGrafico(idApiario, dados, myChart), 2000);
+    setTimeout(() => atualizarGrafico(idApiario, dados, myChart), 1000);
 }
+
 
 // Esta função *atualizarGrafico* atualiza o gráfico que foi renderizado na página,
 // buscando a última medida inserida em tabela contendo as capturas, 
@@ -386,9 +394,9 @@ function atualizarGrafico(idApiario, dados, myChart) {
         if (response.ok) {
             response.json().then(function (novoRegistro) {
 
-                obterdados(idApiario);
+                // obterdados(idApiario);
                 // alertar(novoRegistro, idApiario);
-                console.log(`Dados recebidos: ${JSON.stringify(novoRegistro)}`);
+                console.log(`Dados recebidos: ${JSON.   stringify(novoRegistro)}`);
                 console.log(`Dados atuais do gráfico:`);
                 console.log(dados);
 
@@ -399,7 +407,6 @@ function atualizarGrafico(idApiario, dados, myChart) {
                 if (novoRegistro[0].DataHora == dados.labels[dados.labels.length - 1]) {
                     console.log("---------------------------------------------------------------")
                     console.log("Como não há dados novos para captura, o gráfico não atualizará.")
-                    avisoCaptura.innerHTML = "<i class='fa-solid fa-triangle-exclamation'></i> Foi trazido o dado mais atual capturado pelo sensor. <br> Como não há dados novos a exibir, o gráfico não atualizará."
                     console.log("Horário do novo dado capturado:")
                     console.log(novoRegistro[0].DataHora)
                     console.log("Horário do último dado capturado:")
@@ -418,6 +425,56 @@ function atualizarGrafico(idApiario, dados, myChart) {
 
                     myChart.update();
                 }
+
+
+                var corI;
+                var corE;
+                
+                if(novoRegistro[0].tempI <= 30 ){
+                   corI = '#05035f';
+                } else if (novoRegistro[0].tempI <= 31.5){
+                    corI = '#2056cc';
+                } else if (novoRegistro[0].tempI <= 32.5){
+                    corI = '#5f8be9';
+                } else if (novoRegistro[0].tempI >= 33.9){
+                    corI = '#ffd300';
+                } else if (novoRegistro[0].tempI >= 34.3){
+                    corI = '#f18016';
+                } else if (novoRegistro[0].tempI >= 35){
+                    corI = '#ff0e0e';                }
+                
+                if(novoRegistro[0].tempE <= 22 ){
+                   corE= '#05035f';
+                } else if(novoRegistro[0].tempE <= 23.8 ){
+                corE = '#2056cc';
+                } else if (novoRegistro[0].tempE <= 24.4){
+                    corE = '#5f8be9';
+                }else if (novoRegistro[0].tempE >= 26){
+                 corE = '#ffd300' ;
+                    } else if (novoRegistro[0].tempE >= 26.6){
+                corE = '#f18016';
+                    } else if (novoRegistro[0].tempE >= 27){
+                   corE = '#ff0e0e';
+                    }
+                
+                
+                if (novoRegistro[0].fkApiario == 1 && novoRegistro[0].tempI ) {
+                    caixaAlertaInterno1.innerHTML = `<b> A temperatura Interna do apiário ${idApiario} está em ${novoRegistro[0].tempI}ºC </b> <br>`;
+                    caixaAlertaInterno1.style.backgroundColor = corI
+                } 
+                if (novoRegistro[0].fkApiario == 1 && novoRegistro[0].tempE) {
+                    caixaAlertaExterno1.innerHTML = `<b> A temperatura Externa do apiário ${idApiario} está em ${novoRegistro[0].tempE}ºC </b> <br>`;
+                    caixaAlertaExterno1.style.backgroundColor = corE
+                } 
+                if (novoRegistro[0].fkApiario == 2 && novoRegistro[0].tempI ) {
+                    caixaAlertaInterno2.innerHTML = `<b> A temperatura Interna do apiário ${idApiario} está em ${novoRegistro[0].tempI}ºC </b> <br>`;
+                    caixaAlertaInterno2.style.backgroundColor = corI
+                } 
+                 if (novoRegistro[0].fkApiario == 2 && novoRegistro[0].tempE) {
+                    caixaAlertaExterno2.innerHTML = `<b> A temperatura Externa do apiário ${idApiario} está em ${novoRegistro[0].tempE}ºC </b> <br>`;
+                    caixaAlertaExterno2.style.backgroundColor = corE
+                }
+
 
                 // Altere aqui o valor em ms se quiser que o gráfico atualize mais rápido ou mais devagar
                 proximaAtualizacao = setTimeout(() => atualizarGrafico(idApiario, dados, myChart), 2000);
